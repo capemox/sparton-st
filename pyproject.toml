@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparton-st"
+version = "0.1.0"
+description = "Sparton-style fused SPLADE inference for Sentence Transformers"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = ["sentence-transformers>=5.0,<7", "torch>=2.7.1"]
+
+[project.optional-dependencies]
+hub = ["kernels>=0.19,<1"]
+test = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["sparton_st", "sparton_st._kernel"]
+package-dir = {sparton_st = "src/sparton_st", "sparton_st._kernel" = "kernel/torch-ext/sparton"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

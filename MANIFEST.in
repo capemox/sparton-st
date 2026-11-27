@@ -1,0 +1,2 @@
+include kernel/build.toml kernel/flake.nix kernel/CARD.md
+recursive-include tests *.py
